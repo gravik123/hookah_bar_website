@@ -596,13 +596,81 @@ body {
 /* ── FLAVORS ── */
 .menu { background: var(--off-white); }
 
+.menu-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.menu-image-col {
+  position: sticky;
+  top: 100px;
+}
+
+.hookah-pipe-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.hookah-pipe-img {
+  width: 100%;
+  height: 640px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+}
+
+.hookah-pipe-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  gap: 3px;
+  box-shadow: 0 8px 24px rgba(97,203,200,0.35);
+}
+
+.hookah-pipe-badge span:first-child {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.hookah-pipe-badge span:last-child {
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.menu-content-col { padding-top: 10px; }
+
+.menu-sub {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
 .flavor-tabs {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2px;
-  margin-bottom: 50px;
-  max-width: 520px;
-  margin: 0 auto 50px;
+  margin-bottom: 32px;
+  max-width: 100%;
   border: 1px solid var(--light);
   border-radius: 2px;
   overflow: hidden;
@@ -1250,6 +1318,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .hero-title { font-size: clamp(3rem, 12vw, 5rem); }
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta .btn { padding: 16px 40px; }
+
+  .menu-layout { grid-template-columns: 1fr; }
+  .menu-image-col { position: static; }
+  .hookah-pipe-img { height: 340px; }
+  .hookah-pipe-badge { bottom: -14px; right: -10px; width: 80px; height: 80px; }
 
   .about-grid { grid-template-columns: 1fr; }
   .about-img-stack { max-width: 380px; margin: 0 auto; }
